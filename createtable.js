@@ -17,14 +17,15 @@ con.connect(function(err)
     else{
         console.log("connection done");
     }
-    con.query("create table garfield(name varchar(22), sr int)" ,function(err, result)
+    con.query("create table senior(name varchar(22), sr int)" ,function(err, result)
     {
         if(err)
         {
             throw err;
         }
         else{
-            console.log("table created");
+            console.log(result);
+            process.exit();
         }
     })
-})
+});
